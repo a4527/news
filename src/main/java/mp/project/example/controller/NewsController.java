@@ -25,6 +25,11 @@ public class NewsController {
         this.openAIService = openAIService;
     }   //DI 생성자 주입을 통해 NewsService와 OpenAIService를 주입받음 
 
+    @GetMapping("/")
+    public String root(){
+        return "루트입니다";
+    }
+
     @GetMapping("/crawl")
     public String crawl(@RequestParam String keyword) throws IOException {
         newsService.crawlByKeyword(keyword);
@@ -41,6 +46,7 @@ public class NewsController {
     }
     @GetMapping("/test-summary")
     public String testSummary() {
+        System.out.println("✅ /api/test-summary 호출됨");
     return openAIService.testSummary();
     //return openAIService.summarizeText("이것은 테스트용 뉴스 기사입니다. 중요한 정보를 담고 있습니다.");
 }
