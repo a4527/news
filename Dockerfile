@@ -14,4 +14,4 @@ RUN chmod +x ./gradlew
 RUN ./gradlew build -x test
 
 # 실행
-CMD ["java", "-jar", "build/libs/news-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "build/libs/example-0.0.1-SNAPSHOT.jar"]
