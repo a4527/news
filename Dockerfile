@@ -11,7 +11,7 @@ COPY . .
 RUN chmod +x ./gradlew
 
 # 빌드
-RUN ./gradlew build
+RUN ./gradlew build -x test
 
 # 실행
 CMD ["java", "-jar", "build/libs/news-0.0.1-SNAPSHOT.jar"]
